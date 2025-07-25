@@ -1,7 +1,8 @@
 from mcp.server.fastmcp import FastMCP
 from dotenv import load_dotenv
+import os
 
-env = load_dotenv(".env")
+load_dotenv(".env")
 
 server = FastMCP(
 	name="simple-mcp-calculator-server",
@@ -15,4 +16,14 @@ def add(a: int, b: int) -> int:
 	return a + b
 
 def main():
-	server.run(transport="stdio") # can use sse alternatively, but it is deprecated.
+	serverTransport = os.getenv("TRANSPORT")
+	print(f"transport: {serverTransport}")
+	if serverTransport == "sse":
+		server.run(transport="sse") 
+	elif serverTransport == "stdio":
+		server.run(transport="stdio") 
+	else:
+		server.run(transport="streamableHttp") 
+
+if __name__ == "__main__":
+	main()
