@@ -1,6 +1,7 @@
-We have two ways of transport with mcp. 
+We have three ways of transport with mcp. 
 1. SSE (server sent events) - more suitable for remote connections.
 2. stdio (usual way of communication, this is what will be used in default) - this is what we usually use for internal communication. This is more suitable if all the `client, server and host` are in the same local system.
+3. streamable http - this is the recommended way, and will be the only supported way in the future.
 
 `mcp run dev` - This command requires `mcp[cli]` to be installed on your computer. Use
 **pip install mcp[cli]** to install it. This will install the MCP inspector. 
