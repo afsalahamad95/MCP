@@ -1,5 +1,5 @@
 We have three ways of transport with mcp. 
-1. SSE (server sent events) - more suitable for remote connections.
+1. SSE (server sent events) - more suitable for remote connections. (deprecated)
 2. stdio (usual way of communication, this is what will be used in default) - this is what we usually use for internal communication. This is more suitable if all the `client, server and host` are in the same local system.
 3. streamable http - this is the recommended way, and will be the only supported way in the future.
 
